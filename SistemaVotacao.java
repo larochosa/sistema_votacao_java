@@ -20,7 +20,7 @@ public class SistemaVotacao {
 
     public static void main(String[] args) {
         System.out.println("Sistema de votação iniciado.");
-        scanner.close();
+
 
         int opcao;
 
