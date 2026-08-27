@@ -32,6 +32,25 @@ public class SistemaVotacao {
         }
     }
 
+    static void cadastrarCandidatos() {
+        if (quantidadeCandidatos > 0) {
+            System.out.println("Os candidatos já foram cadastrados.");
+            return;
+        }
+
+        int quantidade;
+
+        do {
+            quantidade = lerInteiro(
+                    "Quantidade de candidatos entre 1 e 5: "
+            );
+
+            if (quantidade < 1 || quantidade > MAX_CANDIDATOS) {
+                System.out.println("Quantidade inválida.");
+            }
+        } while (quantidade < 1 || quantidade > MAX_CANDIDATOS);
+    }
+
 
     public static void main(String[] args) {
         System.out.println("Sistema de votação iniciado.");
