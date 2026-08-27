@@ -36,7 +36,9 @@ public class SistemaVotacao {
         if (quantidadeCandidatos > 0) {
             System.out.println("Os candidatos já foram cadastrados.");
             return;
+
         }
+
 
         int quantidade;
 
@@ -49,11 +51,44 @@ public class SistemaVotacao {
                 System.out.println("Quantidade inválida.");
             }
         } while (quantidade < 1 || quantidade > MAX_CANDIDATOS);
+
+        for (int i = 0; i < quantidade; i++) {
+            int numero;
+
+            while (true) {
+                numero = lerInteiro(
+                        "\nNúmero do candidato " + (i + 1) + ": "
+                );
+
+                if (numero <= 0) {
+                    System.out.println("O número deve ser maior que zero.");
+                    continue;
+                }
+
+                boolean numeroRepetido = false;
+
+                for (int j = 0; j < i; j++) {
+                    if (numerosCandidatos[j] == numero) {
+                        numeroRepetido = true;
+                        break;
+                    }
+                }
+
+                if (numeroRepetido) {
+                    System.out.println("Esse número já está cadastrado.");
+                    continue;
+                }
+
+                break;
+            }
+        }
+
     }
 
 
     public static void main(String[] args) {
         System.out.println("Sistema de votação iniciado.");
+
 
 
         int opcao;
@@ -90,8 +125,7 @@ public class SistemaVotacao {
                     System.out.println("Opção inválida.");
             }
         } while (opcao != 5);
-
-
-
     }
+
 }
+
