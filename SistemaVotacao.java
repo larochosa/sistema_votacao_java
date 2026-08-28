@@ -150,7 +150,8 @@ public class SistemaVotacao {
 
             switch (opcao) {
                 case 1:
-                    System.out.println("Cadastro selecionado.");
+                    cadastrarCandidatos();
+                    mostrarCandidatos();
                     break;
                 case 2:
                     System.out.println("Votação selecionada.");
