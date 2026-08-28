@@ -102,10 +102,25 @@ public class SistemaVotacao {
         }
 
     }
+    static int buscarCandidato(int numero) {
+        int indiceEncontrado = -1;
+
+        for (int i = 0; i < quantidadeCandidatos; i++) {
+            if (numerosCandidatos[i] == numero) {
+                indiceEncontrado = i;
+                break;
+            }
+        }
+
+        return indiceEncontrado;
+    }
 
 
     public static void main(String[] args) {
+
         System.out.println("Sistema de votação iniciado.");
+
+
 
 
 
