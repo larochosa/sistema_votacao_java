@@ -226,6 +226,13 @@ public class SistemaVotacao {
                 System.out.println("Nenhum voto foi registrado.");
                 return;
             }
+        int maiorQuantidadeVotos = votosCandidatos[0];
+
+        for (int i = 1; i < quantidadeCandidatos; i++) {
+            if (votosCandidatos[i] > maiorQuantidadeVotos) {
+                maiorQuantidadeVotos = votosCandidatos[i];
+            }
+        }
 
 
             System.out.println("\n===== RESULTADO =====");
